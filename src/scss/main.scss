@@ -1,0 +1,88 @@
+$blue: #08b7fe;
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.main-header {
+  color: $blue;
+}
+
+.users {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &--tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    .user {
+      flex-direction: column;
+
+      &_elem:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+.user {
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 10px 6px #f0f0f0;
+  display: flex;
+
+  &_elem {
+    flex: 1;
+
+    &--main {
+      color: $blue;
+      font-weight: bold;
+    }
+  }
+}
+
+.switcher {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.switcher-btn {
+  border: none;
+  margin-right: 10px;
+  padding: 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.switcher-icon {
+  fill: $blue;
+  stroke: $blue;
+  transition: stroke 0.3s ease;
+  width: 30px;
+  height: 30px;
+}
+
+.switcher-btn:hover,
+.switcher-btn.active {
+  background-color: $blue;
+  stroke: $blue;
+  .switcher-icon {
+    fill: #fff;
+    stroke: #fff;
+  }
+}
